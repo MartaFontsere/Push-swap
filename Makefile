@@ -6,7 +6,7 @@
 #    By: mfontser <mfontser@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 03:53:26 by mfontser          #+#    #+#              #
-#    Updated: 2024/03/14 23:22:00 by mfontser         ###   ########.fr        #
+#    Updated: 2024/03/22 20:07:44 by mfontser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS =
 OBJS = ${SRCS:.c=.o}
 
 
-NAME = push_swap.a
+NAME = push_swap
 HEADER = push_swap.h
 
 CC = gcc
@@ -29,7 +29,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 
 #Metodo implicito
-%.o:%.c ft_printf.h Makefile Libft/libft.a  
+%.o:%.c push_swap.h Makefile Libft/libft.a  
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Mis metodos
