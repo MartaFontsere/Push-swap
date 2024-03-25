@@ -6,7 +6,7 @@
 /*   By: mfontser <mfontser@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:50:41 by mfontser          #+#    #+#             */
-/*   Updated: 2024/03/23 02:45:08 by mfontser         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:06:20 by mfontser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ int	check_size_int(char **argv) //ahora tengo que comparar strings, pero lo podr
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 		{
 			printf("   he encontrado un signo\n");
-			if (argv[i][j +1] == '0')
+			if (argv[i][j + 1] == '0')
+			{
+				printf("he encontrado un 0 despues del signo");
 				argv[i] = delete_zeros(argv[i]);
+			}
 			if (ft_strlen(argv[i]) > 11)
 			{
 				printf("con signo: el numero supera los limites\n");
@@ -91,8 +94,7 @@ int	check_size_int(char **argv) //ahora tengo que comparar strings, pero lo podr
 		if (argv[i][j] == '0')
 		{
 			printf("he encontrado un 0");
-			while (argv[i][j] == '0')
-				j++;
+			argv[i] = delete_zeros(argv[i]);
 		}
 
 		else

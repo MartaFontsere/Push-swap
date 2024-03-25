@@ -6,17 +6,18 @@
 /*   By: mfontser <mfontser@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:58:02 by mfontser          #+#    #+#             */
-/*   Updated: 2024/03/23 02:45:05 by mfontser         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:53:35 by mfontser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int delete_zeros(char *str)
+char	delete_zeros(char *str)
 {
+	if (*str == '+' || *str == '-')
+		str++;
 	while (*str == '0')
 		str++;
-
 	return (*str);
 }
 
@@ -28,14 +29,6 @@ int	ft_strlen(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
-}
-
-int	ft_isspace(int c)
-{
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
-		|| c == '\r' || c == ' ')
-		return (1);
-	return (0);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -60,6 +53,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	//lo casteaba?
 	}
 	printf("la diferencia entre strings es de 0\n");
+	return (0);
+}
+
+int	ft_isspace(int c)
+{
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r' || c == ' ')
+		return (1);
 	return (0);
 }
 
