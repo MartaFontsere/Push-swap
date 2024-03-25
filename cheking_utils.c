@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-char	delete_zeros(char *str)
+int	delete_zeros(char *str)
 {
 	if (*str == '+' || *str == '-')
 		str++;
